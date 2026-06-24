@@ -8,7 +8,7 @@
     ".": "./src/index.js"
   },
   "scripts": {
-    "test": "node tests/adapters-ts.test.js && node tests/adapters-ts-v1.test.js && node tests/generic-tool.test.js && node tests/file-delete-blocked.test.js && node tests/shell-command-approval.test.js && node tests/database-mutation.test.js && node tests/mcp.test.js && node tests/framework-shaped-mocks.test.js && node tests/evidence-sink.test.js && node tests/policy.test.js && node tests/redaction.test.js && node tests/examples.test.js",
+    "test": "node tests/adapters-ts.test.js && node tests/adapters-ts-v1.test.js && node tests/generic-tool.test.js && node tests/file-delete-blocked.test.js && node tests/shell-command-approval.test.js && node tests/database-mutation.test.js && node tests/mcp.test.js && node tests/framework-shaped-mocks.test.js && node tests/evidence-sink.test.js && node tests/policy.test.js && node tests/redaction.test.js && node tests/examples.test.js && node tests/policy-specificity.test.js",
     "build": "node -e \"import('./src/index.js').then(()=>console.log('ruleoak-adapters-ts build ok'))\"",
     "examples:all": "node examples/generic-tool/run.js && node examples/file-delete-blocked/run.js && node examples/shell-command-approval/run.js && node examples/database-mutation-approval/run.js && node examples/mcp-tool-call/run.js && node examples/langchain-js-tool/run.js && node examples/vercel-ai-sdk-tool/run.js && node examples/openai-agents-js-tool/run.js && node examples/coding-agent-command/run.js && node examples/openclaw-style-action/run.js && node examples/evidence-jsonl-output/run.js",
     "demo:file-delete": "node examples/file-delete-blocked/run.js",

@@ -1,0 +1,13 @@
+import assert from "node:assert/strict";
+import { evaluatePolicy } from "../src/index.js";
+const p1={defaultAction:"deny",allowedActions:["filesystem.read"],approvalRequired:["filesystem.*"],blockedActions:[]};
+assert.equal(evaluatePolicy({toolName:"filesystem",operation:"read"},p1).decision,"allow");
+assert.equal(evaluatePolicy({toolName:"filesystem",operation:"write"},p1).decision,"needs_approval");
+const p2={defaultAction:"deny",allowedActions:["*"],approvalRequired:["database.*"],blockedActions:[]};
+assert.equal(evaluatePolicy({toolName:"search",operation:"read"},p2).decision,"allow");
+assert.equal(evaluatePolicy({toolName:"database",operation:"query"},p2).decision,"needs_approval");
+const p3={defaultAction:"allow",allowedActions:["filesystem.delete"],approvalRequired:["filesystem.delete"],blockedActions:["filesystem.delete"]};
+assert.equal(evaluatePolicy({toolName:"filesystem",operation:"delete"},p3).decision,"deny");
+const p4={defaultAction:"deny",allowedActions:["mcp.*"],approvalRequired:["mcp.*"],blockedActions:[]};
+assert.equal(evaluatePolicy({toolName:"mcp",operation:"tool_call"},p4).decision,"needs_approval");
+console.log("policy-specificity.test.js passed");
