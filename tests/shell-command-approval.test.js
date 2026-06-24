@@ -1,0 +1,2 @@
+import assert from "node:assert/strict";
+import { createGenericToolWrapper, createApprovalCallback } from "../src/index.js"; const r=await createGenericToolWrapper({policy:{approvalRequired:["shell.run"]}, approvalCallback:createApprovalCallback("deny")})("shell","run",async()=>({bad:true}))({command:"rm -rf x"}); assert.equal(r.executed,false); assert.equal(r.decision.decision,"deny"); console.log("shell-command-approval.test.js passed");

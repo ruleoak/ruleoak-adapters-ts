@@ -1,0 +1,1 @@
+import { spawnSync } from "node:child_process"; import assert from "node:assert/strict"; for (const ex of ["generic-tool","file-delete-blocked","mcp-tool-call"]) { const r=spawnSync(process.execPath,[`examples/${ex}/run.js`],{encoding:"utf8"}); assert.equal(r.status,0,r.stderr); } console.log("examples.test.js passed");

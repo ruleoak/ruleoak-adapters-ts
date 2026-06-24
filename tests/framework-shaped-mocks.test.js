@@ -1,0 +1,2 @@
+import assert from "node:assert/strict";
+import { createLangChainJsToolWrapper, createVercelAiSdkToolWrapper, createOpenAIAgentsJsToolWrapper } from "../src/index.js"; assert.equal(typeof createLangChainJsToolWrapper(),"function"); assert.equal(typeof createVercelAiSdkToolWrapper(),"function"); assert.equal(typeof createOpenAIAgentsJsToolWrapper(),"function"); console.log("framework-shaped-mocks.test.js passed");

@@ -1,0 +1,2 @@
+import assert from "node:assert/strict";
+import { createGenericToolWrapper, createApprovalCallback } from "../src/index.js"; const r=await createGenericToolWrapper({policy:{approvalRequired:["database.mutate"]}, approvalCallback:createApprovalCallback("allow")})("database","mutate",async()=>({rows:1}))({sql:"update x"}); assert.equal(r.executed,true); console.log("database-mutation.test.js passed");
