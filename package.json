@@ -14,7 +14,7 @@
     "demo:file-delete": "node examples/file-delete-blocked/run.js",
     "demo:mcp": "node examples/mcp-tool-call/run.js"
   },
-  "homepage": "https://ruleoak.com/public-repositories.html",
+  "homepage": "https://ruleoak.com/developer-ecosystem.html#ruleoak-adapters-ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ruleoak/ruleoak-adapters-ts.git"
